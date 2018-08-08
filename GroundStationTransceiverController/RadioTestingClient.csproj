@@ -7,7 +7,7 @@
     <ProjectGuid>{791731A3-3C55-46AC-B984-51597AFF71B2}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Astrocast.GroundSegment.ExampleEgse</RootNamespace>
-    <AssemblyName>ExampleEgse</AssemblyName>
+    <AssemblyName>RadioTestingClient</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,7 +33,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
-    <DocumentationFile>bin\Release\ExampleEgse.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\RadioTestingClient.xml</DocumentationFile>
     <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <ItemGroup>
