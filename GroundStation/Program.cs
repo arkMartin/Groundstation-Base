@@ -321,6 +321,8 @@ namespace Astrocast.GroundSegment.GroundStation
                                     }
                                     else {
                                         Console.WriteLine("VHFUHF entity not Reserved");
+                                        command.Parameters = System.Text.Encoding.UTF8.GetBytes("VHFUHF entity not Reserved (rigctl can not be executed) ");
+                                        _GroundStation.ProcessScoeCommand(message, command);
                                     }
                                     break;
                                 case "rigctlVHFUHFDownLink":
@@ -336,6 +338,8 @@ namespace Astrocast.GroundSegment.GroundStation
                                     else
                                     {
                                         Console.WriteLine("VHFUHF entity not Reserved (rigctl can not be executed) ");
+                                        command.Parameters = System.Text.Encoding.UTF8.GetBytes("VHFUHF entity not Reserved (rigctl can not be executed) ");
+                                        _GroundStation.ProcessScoeCommand(message, command);
                                     }
                                     break;
                            
@@ -352,6 +356,8 @@ namespace Astrocast.GroundSegment.GroundStation
                                     else
                                     {
                                         Console.WriteLine("VHFUHF entity not Reserved (rotctl can not be executed) ");
+                                        command.Parameters = System.Text.Encoding.UTF8.GetBytes("VHFUHF entity not Reserved (rotctl can not be executed) ");
+                                        _GroundStation.ProcessScoeCommand(message, command);
                                     }
                                     break;
                                 case "rigctlSband":
@@ -367,6 +373,8 @@ namespace Astrocast.GroundSegment.GroundStation
                                     else
                                     {
                                         Console.WriteLine("S Band entity not Reserved (rigctl can not be executed) ");
+                                        command.Parameters = System.Text.Encoding.UTF8.GetBytes("S Band entity not Reserved (rigctl can not be executed) ");
+                                        _GroundStation.ProcessScoeCommand(message, command);
                                     }
                                     break;
                                 case "rotctlS-Band":
@@ -382,6 +390,8 @@ namespace Astrocast.GroundSegment.GroundStation
                                     else
                                     {
                                         Console.WriteLine("S Band entity not Reserved (rotctl can not be executed) ");
+                                        command.Parameters = System.Text.Encoding.UTF8.GetBytes("S Band entity not Reserved (rotctl can not be executed) ");
+                                        _GroundStation.ProcessScoeCommand(message, command);
                                     }
                                     break;
                                 case "requestVHFUHF":
@@ -410,7 +420,7 @@ namespace Astrocast.GroundSegment.GroundStation
                                     break;
                                 case "getReservationState":
                                     command.Parameters = 
-                                       System.Text.Encoding.UTF8.GetBytes(s: $"reservation State VHFUHF: {sts.GetVHFUHFstate ()}reservation State S Band: {sts.GetSbandstate()}");
+                                       System.Text.Encoding.UTF8.GetBytes(s: $"reservation State VHFUHF: {sts.GetVHFUHFstate ()}  reservation State S Band: {sts.GetSbandstate()}");
                                     _GroundStation.ProcessScoeCommand(message, command);
                                     break;
                                 default:
