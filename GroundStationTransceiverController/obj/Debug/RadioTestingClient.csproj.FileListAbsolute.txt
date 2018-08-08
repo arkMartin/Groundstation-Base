@@ -1,0 +1,10 @@
+H:\Eigene Dateien\RemoteGroundstationBase\GroundStationTransceiverController\bin\Debug\ExampleEgse.exe.config
+H:\Eigene Dateien\RemoteGroundstationBase\GroundStationTransceiverController\bin\Debug\ExampleEgse.exe
+H:\Eigene Dateien\RemoteGroundstationBase\GroundStationTransceiverController\bin\Debug\ExampleEgse.pdb
+H:\Eigene Dateien\RemoteGroundstationBase\GroundStationTransceiverController\bin\Debug\GroundSegment.Data.dll
+H:\Eigene Dateien\RemoteGroundstationBase\GroundStationTransceiverController\bin\Debug\GroundSegment.Data.Egse.dll
+H:\Eigene Dateien\RemoteGroundstationBase\GroundStationTransceiverController\bin\Debug\GroundSegment.Egse.RouterClient.dll
+H:\Eigene Dateien\RemoteGroundstationBase\GroundStationTransceiverController\obj\Debug\RadioTestingClient.csproj.CoreCompileInputs.cache
+H:\Eigene Dateien\RemoteGroundstationBase\GroundStationTransceiverController\obj\Debug\RadioTestingClient.csproj.CopyComplete
+H:\Eigene Dateien\RemoteGroundstationBase\GroundStationTransceiverController\obj\Debug\ExampleEgse.exe
+H:\Eigene Dateien\RemoteGroundstationBase\GroundStationTransceiverController\obj\Debug\ExampleEgse.pdb

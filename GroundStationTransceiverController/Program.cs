@@ -5,16 +5,16 @@ using System;
 using System.Configuration;
 using System.Globalization;
 
-namespace Astrocast.GroundSegment.ExampleEgse
+namespace Astrocast.GroundSegment.GroundstationTransceiverController
 {
-    /// <summary>Example EGSE program that connects to the EGSE Router and dispatches SCOE Commands to an example SCOE Service.</summary>
+    /// <summary>EGSE program that connects to the EGSE Router. Commands are sent via EGSE router to radios and rotators.</summary>
     public static class Program
     {
         /// <summary>Contains whether the program is being closed.</summary>
         private static volatile bool _closing = false;
 
         /// <summary>Example SCOE Service.</summary>
-        private static ExampleScoeService _exampleScoeService;
+        private static RadioTestingScoeService _exampleScoeService;
 
         /// <summary>The EGSE Router Client instance.</summary>
         private static RouterClient _egseClient;
@@ -33,18 +33,14 @@ namespace Astrocast.GroundSegment.ExampleEgse
 
         private static void SendHamlibCommand()
         {
-            
-            
-            ushort destinationId = 68;
+            ushort destinationId = ushort.Parse(ConfigurationManager.AppSettings[name: "EgseTargetClientId"]);
             uint token = 1;
             ushort spacecraftId = 1;
-
             string line;
             while (true)
             {
                 Console.WriteLine("Enter valid hamlib command and press enter: ");
                 line = Console.ReadLine();
-
                 if ((line == "online") || (line == "o"))
                     ;
                 else if ((line == "offline") || (line == "f"))
@@ -79,8 +75,7 @@ namespace Astrocast.GroundSegment.ExampleEgse
 
                     // Read the Service Type of the Example SCOE Service from the configuration file and create it
                     byte exampleScoeServiceType = byte.Parse(ConfigurationManager.AppSettings["ExampleScoeServiceType"], CultureInfo.InvariantCulture);
-                    _exampleScoeService = new ExampleScoeService(exampleScoeServiceType, _egseClient);
-
+                    _exampleScoeService = new RadioTestingScoeService(exampleScoeServiceType, _egseClient);
 
                     // Try to connect to the EGSE Router
                     Console.WriteLine("Connecting to EGSE Router at {0}:{1}...", egseClient.RouterHost, egseClient.RouterPort);
@@ -89,10 +84,6 @@ namespace Astrocast.GroundSegment.ExampleEgse
                     // TODO: Implement here actions to perform outside of responding to incoming messages
 
                     SendHamlibCommand();
-                    //SendHamlibCommand();
-                    //SendHamlibCommand();
-                    //SendHamlibCommand();
-                    //SendHamlibCommand();
 
                     waitQuit();
                 }
@@ -171,7 +162,6 @@ namespace Astrocast.GroundSegment.ExampleEgse
             }
         }
 
-
         /// <summary>Processes a SCOE Command Request to send a frame (Ground Station specific).</summary>
         /// <param name="message">The ReceiveData message that contains the SCOE Command Request.</param>
         /// <param name="command">The SCOE Command Request.</param>
@@ -203,7 +193,6 @@ namespace Astrocast.GroundSegment.ExampleEgse
             if (command.AckComplete)
                 _egseClient.SendScoeCommandVerificationReport(ScoeVerificationType.SuccessfulCompletion, message.Token, message.SourceId, message.Token, message.SpacecraftId);
         }
-
 
         /// <summary>Handles the Connected event of the EGSE Router Client.</summary>
         /// <param name="sender">The RouterClient instance, source of the event.</param>
