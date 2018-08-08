@@ -48,7 +48,7 @@
             <summary>Entry point method of the program.</summary>
             <param name="args">The command line arguments.</param>
         </member>
-        <member name="M:Astrocast.GroundSegment.GroundStation.Program.waitQuit">
+        <member name="M:Astrocast.GroundSegment.GroundStation.Program.WaitQuit">
             <summary>Waits for user to press enter or Ctrl+C to quit.</summary>
         </member>
         <member name="M:Astrocast.GroundSegment.GroundStation.Program.egseClient_DataMessageReceived(System.Object,Epfl.SwissCube.GroundSegment.Egse.RouterClient.DataMessageReceivedEventArgs)">
