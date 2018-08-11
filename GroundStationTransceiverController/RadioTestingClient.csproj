@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{791731A3-3C55-46AC-B984-51597AFF71B2}</ProjectGuid>
+    <ProjectGuid>{14F2C9B8-6CF7-401D-8682-42FE4C7FF1E8}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Astrocast.GroundSegment.ExampleEgse</RootNamespace>
     <AssemblyName>RadioTestingClient</AssemblyName>
