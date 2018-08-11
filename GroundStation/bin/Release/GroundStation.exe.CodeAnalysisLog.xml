@@ -6,8 +6,8 @@
    <Modules>
     <Module Name="groundstation.exe">
      <Messages>
-      <Message TypeName="MarkWindowsFormsEntryPointsWithStaThread" Category="Microsoft.Usage" CheckId="CA2232" Status="Active" Created="2018-08-09 20:37:48Z" FixCategory="NonBreaking">
-       <Issue Certainty="95" Level="Error">Markieren Sie die Einstiegspunktmethode 'Program.Main(string[])' in Assembly 'GroundStation.exe' mit einem STAThreadAttribute.</Issue>
+      <Message TypeName="MarkWindowsFormsEntryPointsWithStaThread" Category="Microsoft.Usage" CheckId="CA2232" Status="Active" Created="2018-08-11 19:08:18Z" FixCategory="NonBreaking">
+       <Issue Certainty="95" Level="Error" Path="H:\Eigene Dateien\RemoteGroundstationBase\GroundStation" File="Program.cs" Line="202">Markieren Sie die Einstiegspunktmethode 'Program.Main(string[])' in Assembly 'GroundStation.exe' mit einem STAThreadAttribute.</Issue>
       </Message>
      </Messages>
      <Namespaces>
@@ -17,7 +17,7 @@
          <Members>
           <Member Name="#Finalize()" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2018-08-09 20:37:48Z" FixCategory="Breaking">
+            <Message TypeName="ImplementIDisposableCorrectly" Category="Microsoft.Design" CheckId="CA1063" Status="Active" Created="2018-08-11 19:08:18Z" FixCategory="Breaking">
              <Issue Name="FinalizeImplementation" Certainty="95" Level="Error" Path="H:\Eigene Dateien\RemoteGroundstationBase\GroundStation" File="StatusDisplay.cs" Line="66">Ändern Sie 'Lamps.~Lamps()' so, dass Dispose(false) aufgerufen und anschließend ein Wert zurückgegeben wird.</Issue>
              <Issue Name="FinalizeOverride" Certainty="95" Level="Error" Path="H:\Eigene Dateien\RemoteGroundstationBase\GroundStation" File="StatusDisplay.cs" Line="66">Entfernen Sie den Finalizer aus dem Typ "'Lamps'", überschreiben Sie Dispose(bool disposing), und platzieren Sie die Finalize-Logik in dem Codepfad, in dem "disposing" "False" ist.</Issue>
             </Message>
@@ -29,8 +29,8 @@
          <Members>
           <Member Name="#outputError(System.String)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="DoNotLockOnObjectsWithWeakIdentity" Category="Microsoft.Reliability" CheckId="CA2002" Status="Active" Created="2018-08-09 20:37:48Z" FixCategory="NonBreaking">
-             <Issue Certainty="75" Level="CriticalError" Path="H:\Eigene Dateien\RemoteGroundstationBase\GroundStation" File="Program .cs" Line="55">'Program.outputError(string)' Sperren auf Verweis von Typ "'TextWriter'". Ersetzen Sie diese durch eine Sperre eines Objekts mit starker Identität.</Issue>
+            <Message TypeName="DoNotLockOnObjectsWithWeakIdentity" Category="Microsoft.Reliability" CheckId="CA2002" Status="Active" Created="2018-08-11 19:08:18Z" FixCategory="NonBreaking">
+             <Issue Certainty="75" Level="CriticalError" Path="H:\Eigene Dateien\RemoteGroundstationBase\GroundStation" File="Program.cs" Line="55">'Program.outputError(string)' Sperren auf Verweis von Typ "'TextWriter'". Ersetzen Sie diese durch eine Sperre eines Objekts mit starker Identität.</Issue>
             </Message>
            </Messages>
           </Member>
@@ -38,7 +38,7 @@
         </Type>
         <Type Name="StatusDisplay" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2018-08-09 20:37:48Z" FixCategory="DependsOnFix">
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2018-08-11 19:08:18Z" FixCategory="DependsOnFix">
            <Issue Name="DependsOnFix" Certainty="95" Level="CriticalError">Implementieren Sie IDisposable für "'StatusDisplay'", weil Member der folgenden IDisposable-Typen instanziiert werden: 'Lamps'. Wenn "'StatusDisplay'" bereits veröffentlicht wurde, wird das Hinzufügen von neuen Membern, die IDisposable für diesen Typ implementieren, für vorhandene Benutzer als fehlerhafte Änderung angesehen, die die Lauffähigkeit der Anwendung beeinträchtigt.</Issue>
           </Message>
          </Messages>
