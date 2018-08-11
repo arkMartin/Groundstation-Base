@@ -310,7 +310,7 @@ namespace Astrocast.GroundSegment.GroundStation
 
                             string[] target = textCommand.Split(':');
                             switch (target[0]) {
-                                case "rigctlVHFUHFUpLink01":
+                                case "rigctlVHFUHF01":
                                     if (VHFUHFentityReserved) { 
                                        rsp = SendTCPstreamToHamLibD(target[1], clientVHFUHF1, stream: streamVHFUHF1);
                                        txt = target[0]; txt += " ";

@@ -12,7 +12,7 @@
          <Members>
           <Member Name="#outputError(System.String)" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="DoNotLockOnObjectsWithWeakIdentity" Category="Microsoft.Reliability" CheckId="CA2002" Status="Active" Created="2018-08-11 19:08:18Z" FixCategory="NonBreaking">
+            <Message TypeName="DoNotLockOnObjectsWithWeakIdentity" Category="Microsoft.Reliability" CheckId="CA2002" Status="Active" Created="2018-08-11 19:51:32Z" FixCategory="NonBreaking">
              <Issue Certainty="75" Level="CriticalError" Path="H:\Eigene Dateien\RemoteGroundstationBase\GroundStationTransceiverController" File="Program.cs" Line="31">'Program.outputError(string)' Sperren auf Verweis von Typ "'TextWriter'". Ersetzen Sie diese durch eine Sperre eines Objekts mit starker Identität.</Issue>
             </Message>
            </Messages>
