@@ -75,12 +75,24 @@ namespace Astrocast.GroundSegment.GroundStation
             }
         }
 
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // Lamps
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "Lamps";
+            this.ResumeLayout(false);
+        }
+
         public void StatusDisplay() {
-            Text = "current use of groundstation equipment at HB9HSLU ";
+            Text = "reservation state of groundstation equipment at HB9HSLU ";
             Width = 420;
             Height = 280;
-            
-            formGraphics = CreateGraphics();
+            FormBorderStyle = FormBorderStyle.FixedDialog;  // make not_resizable
+            MinimizeBox = false;  // make not_resizable
+            MaximizeBox = false;  // make not_resizable
             formGraphics = CreateGraphics();
             Application.Run(this);
         }

@@ -310,7 +310,7 @@ namespace Astrocast.GroundSegment.GroundStation
 
                             string[] target = textCommand.Split(':');
                             switch (target[0]) {
-                                case "rigctlVHFUHFUpLink":
+                                case "rigctlVHFUHFUpLink01":
                                     if (VHFUHFentityReserved) { 
                                        rsp = SendTCPstreamToHamLibD(target[1], clientVHFUHF1, stream: streamVHFUHF1);
                                        txt = target[0]; txt += " ";
@@ -325,7 +325,7 @@ namespace Astrocast.GroundSegment.GroundStation
                                         _GroundStation.ProcessScoeCommand(message, command);
                                     }
                                     break;
-                                case "rigctlVHFUHFDownLink":
+                                case "rigctlVHFUHF02":
                                     if (VHFUHFentityReserved)
                                     {
                                         rsp = SendTCPstreamToHamLibD(target[1], clientVHFUHF1, stream: streamVHFUHF1);
@@ -420,11 +420,13 @@ namespace Astrocast.GroundSegment.GroundStation
                                     break;
                                 case "getReservationState":
                                     command.Parameters = 
-                                       System.Text.Encoding.UTF8.GetBytes(s: $"reservation State VHFUHF: {sts.GetVHFUHFstate ()}  reservation State S Band: {sts.GetSbandstate()}");
+                                    System.Text.Encoding.UTF8.GetBytes(s: $"reservation State VHFUHF: {sts.GetVHFUHFstate ()}  reservation State S Band: {sts.GetSbandstate()}");
                                     _GroundStation.ProcessScoeCommand(message, command);
                                     break;
                                 default:
                                     Console.WriteLine("received illegal command {0}", textCommand);
+                                    command.Parameters = System.Text.Encoding.UTF8.GetBytes(s: "received illegal command { 0}" + textCommand);
+                                    _GroundStation.ProcessScoeCommand(message, command);
                                     break;
                             }
                         }

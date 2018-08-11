@@ -4,30 +4,6 @@
         <name>GroundStation</name>
     </assembly>
     <members>
-        <member name="T:Astrocast.GroundSegment.GroundStation.GroundStation">
-            <summary>Implements an example SCOE Service, echoes incoming SCOE Command's data into a SCOE Observation report.</summary>
-        </member>
-        <member name="P:Astrocast.GroundSegment.GroundStation.GroundStation.ServiceType">
-            <summary>The Service Type of this service.</summary>
-        </member>
-        <member name="F:Astrocast.GroundSegment.GroundStation.GroundStation._egseClient">
-            <summary>The EGSE Router Client instance to use to send messages.</summary>
-        </member>
-        <member name="M:Astrocast.GroundSegment.GroundStation.GroundStation.#ctor(System.Byte,Epfl.SwissCube.GroundSegment.Egse.RouterClient.RouterClient)">
-            <summary>Creates an instance of this SCOE Service.</summary>
-            <param name="serviceType">The SCOE Service Type to use.</param>
-            <param name="egseClient">The EGSE Router Client instance to use to send messages.</param>
-        </member>
-        <member name="M:Astrocast.GroundSegment.GroundStation.GroundStation.ProcessScoeCommand(Epfl.SwissCube.GroundSegment.Data.Egse.ReceiveDataMessage,Epfl.SwissCube.GroundSegment.Data.Egse.ScoeCommand)">
-            <summary>Processes a SCOE Command Request for this service.</summary>
-            <param name="message">The ReceiveData message that contains the SCOE Command Request.</param>
-            <param name="command">The SCOE Command Request.</param>
-        </member>
-        <member name="M:Astrocast.GroundSegment.GroundStation.GroundStation.processEchoCommand(Epfl.SwissCube.GroundSegment.Data.Egse.ReceiveDataMessage,Epfl.SwissCube.GroundSegment.Data.Egse.ScoeCommand)">
-            <summary>Echoes the data received in a SCOE Command Request (Type,1) into a report of type (Type,2).</summary>
-            <param name="message">The ReceiveData message that contains the SCOE Command Request.</param>
-            <param name="command">The SCOE Command Request.</param>
-        </member>
         <member name="T:Astrocast.GroundSegment.GroundStation.Program">
             <summary>EGSE program that connects to the EGSE Router and dispatches SCOE Groundstation Commands to a radio and rotator.</summary>
         </member>
@@ -75,6 +51,30 @@
             <summary>Handles the Disconnected event of the EGSE Router Client.</summary>
             <param name="sender">The RouterClient instance, source of the event.</param>
             <param name="e">The event data.</param>
+        </member>
+        <member name="T:Astrocast.GroundSegment.GroundStation.GroundStation">
+            <summary>Implements an example SCOE Service, echoes incoming SCOE Command's data into a SCOE Observation report.</summary>
+        </member>
+        <member name="P:Astrocast.GroundSegment.GroundStation.GroundStation.ServiceType">
+            <summary>The Service Type of this service.</summary>
+        </member>
+        <member name="F:Astrocast.GroundSegment.GroundStation.GroundStation._egseClient">
+            <summary>The EGSE Router Client instance to use to send messages.</summary>
+        </member>
+        <member name="M:Astrocast.GroundSegment.GroundStation.GroundStation.#ctor(System.Byte,Epfl.SwissCube.GroundSegment.Egse.RouterClient.RouterClient)">
+            <summary>Creates an instance of this SCOE Service.</summary>
+            <param name="serviceType">The SCOE Service Type to use.</param>
+            <param name="egseClient">The EGSE Router Client instance to use to send messages.</param>
+        </member>
+        <member name="M:Astrocast.GroundSegment.GroundStation.GroundStation.ProcessScoeCommand(Epfl.SwissCube.GroundSegment.Data.Egse.ReceiveDataMessage,Epfl.SwissCube.GroundSegment.Data.Egse.ScoeCommand)">
+            <summary>Processes a SCOE Command Request for this service.</summary>
+            <param name="message">The ReceiveData message that contains the SCOE Command Request.</param>
+            <param name="command">The SCOE Command Request.</param>
+        </member>
+        <member name="M:Astrocast.GroundSegment.GroundStation.GroundStation.processEchoCommand(Epfl.SwissCube.GroundSegment.Data.Egse.ReceiveDataMessage,Epfl.SwissCube.GroundSegment.Data.Egse.ScoeCommand)">
+            <summary>Echoes the data received in a SCOE Command Request (Type,1) into a report of type (Type,2).</summary>
+            <param name="message">The ReceiveData message that contains the SCOE Command Request.</param>
+            <param name="command">The SCOE Command Request.</param>
         </member>
     </members>
 </doc>
