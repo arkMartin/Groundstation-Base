@@ -8,6 +8,8 @@ namespace Astrocast.GroundSegment.GroundStation
 {
     public class Lamps: Form
     {
+        const String OccupiedStr = "occupied by\n\n     remote user";
+        const String FreeStr = "free";
         private static System.Drawing.Graphics formGraphics;
         public enum State {free, occupied};
         private static State statusVHFUHF, statusSband;
@@ -16,6 +18,8 @@ namespace Astrocast.GroundSegment.GroundStation
 
         public static void M1()
         {
+            String StateTextVHFUHF = " ";
+            String StateTextSband = " ";
             System.Drawing.SolidBrush myBrush;
 
             System.Drawing.SolidBrush myGreenBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Green);
@@ -26,10 +30,12 @@ namespace Astrocast.GroundSegment.GroundStation
             if (statusVHFUHF == State.free)
             {
                 myBrush = myGreenBrush;
+                StateTextVHFUHF = FreeStr;
             }
             else
             {
                 myBrush = myRedBrush;
+                StateTextVHFUHF = OccupiedStr;
             }
             Lamps.formGraphics.FillRectangle(myBrush, VHFUHFRectangle);
             formGraphics.DrawRectangle(new Pen(Color.Black, 4.0f), VHFUHFRectangle);
@@ -37,17 +43,19 @@ namespace Astrocast.GroundSegment.GroundStation
             if (statusSband == State.free)
             {
                 myBrush = myGreenBrush;
+                StateTextSband = FreeStr;
             }
             else
             {
                 myBrush = myRedBrush;
+                StateTextSband = OccupiedStr;
             }
             Rectangle SbandRectangle = new Rectangle(200, 4, 200, 200);
             Lamps.formGraphics.FillRectangle(myBrush, SbandRectangle);
             formGraphics.DrawRectangle(new Pen(Color.Black, 4.0f), rect: SbandRectangle);
 
-            Lamps.formGraphics.DrawString("\n\n     VHFUHF", new Font("Arial", 16), myBlackBrush, VHFUHFRectangle);
-            Lamps.formGraphics.DrawString("\n\n     S-Band", new Font("Arial", 16), myBlackBrush, SbandRectangle);
+            Lamps.formGraphics.DrawString("\n\n     VHF / UHF\n\n     "+ StateTextVHFUHF, new Font("Arial", 16), myBlackBrush, VHFUHFRectangle);
+            Lamps.formGraphics.DrawString("\n\n     S-Band\n\n     "+ StateTextSband, new Font("Arial", 16), myBlackBrush, SbandRectangle);
         }
 
         public DisplayUsage Display = new DisplayUsage(M1);
